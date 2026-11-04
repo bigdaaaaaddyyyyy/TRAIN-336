@@ -31,6 +31,40 @@
 $ npm install
 ```
 
+## Authentication foundation
+
+The API has the dependencies and framework configuration for the planned
+authentication approach: bcrypt password hashing and JWTs delivered in
+HttpOnly cookies. Registration, login, logout, cookie issuance, and JWT
+verification are not implemented yet.
+
+Before starting the API, add these values to the local `lost-api/.env` file:
+
+- `JWT_SECRET`: generate a unique secret with
+  `node -e "console.log(require('crypto').randomBytes(32).toString('base64url'))"`.
+  The application requires this value at startup; do not commit it.
+- `FRONTEND_ORIGIN`: the exact origin of the frontend, including scheme and
+  port (for example, `http://localhost:3001`). Multiple origins can be
+  comma-separated. Credentialed CORS is enabled only for the configured
+  origins; when unset, cross-origin requests are not enabled.
+
+See `.env.example` for the variable names. Token lifetime and cookie options
+will be set when token issuance is implemented.
+
+## Profession options
+
+`GET /api/professions` returns active profession options, ordered by category
+and name. The endpoint includes each option's ID, name, and category.
+
+To insert or reactivate the initial profession options from the PRD, run this
+from `lost-api` after configuring `DATABASE_URL`:
+
+```bash
+npm run db:seed
+```
+
+The seed is safe to rerun: it upserts options by name.
+
 ## Compile and run the project
 
 ```bash
