@@ -3,6 +3,7 @@ node_modules/
 venv/
 .venv/
 env/
+data/
 
 # Build and generated output
 .next/

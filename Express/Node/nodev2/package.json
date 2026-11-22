@@ -1,0 +1,17 @@
+{
+  "name": "node-day2",
+  "version": "1.0.0",
+  "description": "Day 2: Async JavaScript in Node - callbacks, promises, async/await, dotenv",
+  "type": "module",
+  "scripts": {
+    "callbacks": "node files-callbacks.js",
+    "promises": "node files-promises.js",
+    "async": "node files-async.js",
+    "env": "node env-demo.js",
+    "fetch": "node fetch-api.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^18.0.10"
+  }
+}

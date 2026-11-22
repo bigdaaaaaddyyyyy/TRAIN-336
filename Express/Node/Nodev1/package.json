@@ -1,0 +1,12 @@
+{
+  "name": "node-day1",
+  "version": "1.0.0",
+  "description": "Day 1: Node.js fundamentals - raw http server and fs/promises",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "files": "node files.js"
+  },
+  "license": "ISC"
+}
